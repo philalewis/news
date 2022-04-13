@@ -11,6 +11,7 @@ const App = () => {
   useEffect(() => {
     getFeaturedStories()
     .then(data => setNews(data.results))
+    .catch(error => console.log(error))
   }, [])
 
   return (
