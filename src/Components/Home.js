@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from './Navbar'
 import { Link } from 'react-router-dom'
+import { getFeaturedStories } from '../queries'
 
-const Home = ({ news }) => {
+const Home = () => {
+  const [ news, setNews ] = useState([])
+
+  useEffect(() => {
+    getFeaturedStories()
+    .then(data => setNews(data.results))
+    .catch(error => console.log(error))
+  }, [])
 
   const stories = () => {
     return news.map(article => {
