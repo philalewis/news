@@ -5,15 +5,19 @@ import { getFeaturedStories } from '../queries'
 
 const Home = () => {
   const [ news, setNews ] = useState([])
+  const [ currentArticles, setCurrentArticles ] = useState([])
 
   useEffect(() => {
     getFeaturedStories()
-    .then(data => setNews(data.results))
+    .then(data => {
+      setNews(data.results)
+      setCurrentArticles(data.results)
+    })
     .catch(error => console.log(error))
   }, [])
 
   const stories = () => {
-    return news.map(article => {
+    return currentArticles.map(article => {
       return (
         <div key={article.url}>
           <h3>{article.title}</h3>
@@ -28,7 +32,7 @@ const Home = () => {
 
   return (
     <section>
-      <Navbar />
+      <Navbar news={ news } setCurrentArticles={ setCurrentArticles }/>
       { stories() }
     </section>
   )
