@@ -12,7 +12,3 @@ export const getFeaturedStories = () => {
   return fetch(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`)
   .then(response => catchError(response))
 }
-
-export const getSingleStory = () => {
-
-}
