@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { getFeaturedStories } from '../queries'
 
 const Article = () => {
   const [ article, setArticle ] = useState({})
   const [ loading, setLoading ] = useState(true)
   const params = useParams()
+  const navigate = useNavigate()
 
   useEffect(() => {
     getFeaturedStories()
@@ -25,8 +26,15 @@ const Article = () => {
     return `${splitDate[1]}/${splitDate[2]}/${splitDate[0]}`
   }
 
+  const goHome = () => {
+    navigate('/')
+  }
+
   return (
     <>
+      <header>
+        <h1 onClick={goHome}>Today's News</h1>
+      </header>
       {!loading &&
         <section>
           <h2>{ article.title }</h2>
