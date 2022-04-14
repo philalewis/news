@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { getFeaturedStories } from '../queries'
 import '../Styles/Article.css'
 
@@ -13,7 +13,7 @@ const Article = () => {
     getFeaturedStories()
     .then(data => {
       const currentArticle = data.results.find(art => {
-        return art.title = params.headline
+        return art.title === params.headline
       })
       setArticle(currentArticle)
       setLoading(false)
@@ -36,6 +36,7 @@ const Article = () => {
       <header className="navbar-container">
         <h1 className="header-home" onClick={goHome}>Today's News</h1>
       </header>
+      {/* {console.log(article)} */}
       {!loading &&
         <section className="article-container">
           <h2 className="article-headline" >{ article.title }</h2>
