@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from './Navbar'
-import { Link } from 'react-router-dom'
+import Preview from './Preview'
 import { getFeaturedStories } from '../queries'
 import '../Styles/Home.css'
 
@@ -20,13 +20,7 @@ const Home = () => {
   const stories = () => {
     return currentArticles.map(article => {
       return (
-        <div className="story-container" key={article.url}>
-          <h3 className="headline" >{article.title}</h3>
-          <p className="abstract" >{article.abstract}</p>
-          <Link to={`/${article.title}`}>
-            <button className="details-btn">View Article</button>
-          </Link>
-        </div>
+        <Preview article={article} key={article.title}/>
       )
     })
   }

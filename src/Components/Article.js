@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { getFeaturedStories } from '../queries'
 import '../Styles/Article.css'
 
@@ -13,7 +13,7 @@ const Article = () => {
     getFeaturedStories()
     .then(data => {
       const currentArticle = data.results.find(art => {
-        return art.title = params.headline
+        return art.title === params.headline
       })
       setArticle(currentArticle)
       setLoading(false)
@@ -42,6 +42,7 @@ const Article = () => {
           <p className="article-byline" >{ article.byline }</p>
           <p className="published-date" >{ formatDate(article.published_date) }</p>
           <p className="article-abstract" >{ article.abstract }</p>
+          <a href={article.url}>Go to NY Times article</a>
         </section>
       }
     </>
