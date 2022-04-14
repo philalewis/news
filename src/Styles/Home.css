@@ -1,0 +1,34 @@
+.top-stories {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  margin: 1rem;
+}
+
+.story-container {
+  border: 1px solid black;
+  border-radius: 3px;
+  height: 16rem;
+  text-align: center;
+  padding: 5px;
+}
+
+.abstract {
+  height: 6rem;
+  overflow: hidden;
+}
+
+.headline {
+  font-size: 1rem;
+  margin: none;
+  height: 4rem;
+  overflow: hidden;
+}
+
+.details-btn {
+  cursor: pointer;
+  background-color: #DDDDDD;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+}
