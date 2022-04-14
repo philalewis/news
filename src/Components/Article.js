@@ -33,15 +33,15 @@ const Article = () => {
 
   return (
     <>
-      <header>
-        <h1 onClick={goHome}>Today's News</h1>
+      <header className="navbar-container">
+        <h1 className="header-home" onClick={goHome}>Today's News</h1>
       </header>
       {!loading &&
-        <section>
-          <h2>{ article.title }</h2>
-          <p>{ article.byline }</p>
-          <p>{ formatDate(article.published_date) }</p>
-          <p>{ article.abstract }</p>
+        <section className="article-container">
+          <h2 className="article-headline" >{ article.title }</h2>
+          <p className="article-byline" >{ article.byline }</p>
+          <p className="published-date" >{ formatDate(article.published_date) }</p>
+          <p className="article-abstract" >{ article.abstract }</p>
         </section>
       }
     </>

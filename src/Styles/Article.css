@@ -1,0 +1,27 @@
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+}
+
+.header-home {
+  color: white;
+  margin: 1.5rem;
+  cursor: pointer;
+}
+
+.article-container {
+  margin: 1.5rem;
+}
+
+.article-headline,
+.article-byline,
+.published-date {
+  margin: .4rem 0 .4rem 0;
+}
+
+.article-abstract {
+  margin: 2rem 0;
+}
