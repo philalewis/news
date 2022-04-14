@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Navbar from './Navbar'
 import { Link } from 'react-router-dom'
 import { getFeaturedStories } from '../queries'
+import '../Styles/Home.css'
 
 const Home = () => {
   const [ news, setNews ] = useState([])

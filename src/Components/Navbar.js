@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import '../Styles/Navbar.css'
 
 const Navbar = ({ news, setCurrentArticles }) => {
   const [ dropdown, setDropdown ] = useState([])
@@ -30,9 +31,9 @@ const Navbar = ({ news, setCurrentArticles }) => {
   }
 
   return (
-    <header>
-      <h1>Today's News</h1>
-      <select defaultValue="all" onChange={event => filterStories(event)}>
+    <header className="navbar">
+      <h1 className="header">Today's News</h1>
+      <select className="section-select" defaultValue="all" onChange={event => filterStories(event)}>
         <option value="all">All Stories</option>
         {populateOptions()}
       </select>

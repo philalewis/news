@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getFeaturedStories } from '../queries'
+import '../Styles/Article.css'
 
 const Article = () => {
   const [ article, setArticle ] = useState({})
