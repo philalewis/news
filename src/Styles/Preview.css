@@ -1,0 +1,28 @@
+.story-container {
+  border: 1px solid black;
+  border-radius: 3px;
+  height: 13rem;
+  text-align: center;
+  padding: 5px;
+}
+
+.abstract {
+  height: 3.6rem;
+  overflow: hidden;
+}
+
+.headline {
+  font-size: 1rem;
+  margin: none;
+  height: 3.6rem;
+  overflow: hidden;
+}
+
+.details-btn {
+  cursor: pointer;
+  background-color: #DDDDDD;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  width: 75%;
+}
