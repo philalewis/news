@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+}
+
+.header {
+  color: white;
+  margin: 1.5rem;
+  font-size: 2rem;
+}
+
+.section-select {
+  cursor: pointer;
+  margin: 1.5rem;
+  border: none;
+  width: 8rem;
+}
+

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Navbar from './Navbar'
 import { Link } from 'react-router-dom'
 import { getFeaturedStories } from '../queries'
+import '../Styles/Home.css'
 
 const Home = () => {
   const [ news, setNews ] = useState([])
@@ -19,11 +20,11 @@ const Home = () => {
   const stories = () => {
     return currentArticles.map(article => {
       return (
-        <div key={article.url}>
-          <h3>{article.title}</h3>
-          <p>{article.abstract}</p>
+        <div className="story-container" key={article.url}>
+          <h3 className="headline" >{article.title}</h3>
+          <p className="abstract" >{article.abstract}</p>
           <Link to={`/${article.title}`}>
-            <button>See more details</button>
+            <button className="details-btn">View Article</button>
           </Link>
         </div>
       )
@@ -33,7 +34,9 @@ const Home = () => {
   return (
     <section>
       <Navbar news={ news } setCurrentArticles={ setCurrentArticles }/>
-      { stories() }
+      <div className="top-stories">
+        { stories() }
+      </div>
     </section>
   )
 }
