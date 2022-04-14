@@ -36,13 +36,13 @@ const Article = () => {
       <header className="navbar-container">
         <h1 className="header-home" onClick={goHome}>Today's News</h1>
       </header>
-      {/* {console.log(article)} */}
       {!loading &&
         <section className="article-container">
           <h2 className="article-headline" >{ article.title }</h2>
           <p className="article-byline" >{ article.byline }</p>
           <p className="published-date" >{ formatDate(article.published_date) }</p>
           <p className="article-abstract" >{ article.abstract }</p>
+          <a href={article.url}>Go to NY Times article</a>
         </section>
       }
     </>
