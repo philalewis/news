@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const Navbar = ({ news }) => {
-  const [ currentArticles, setCurrentArticles ] = useState([])
-  const [ section, setSection ] = useState([])
+const Navbar = ({ news, setCurrentArticles }) => {
   const [ dropdown, setDropdown ] = useState([])
 
   useEffect(() => {
@@ -16,15 +14,26 @@ const Navbar = ({ news }) => {
   const populateOptions = () => {
     return dropdown.map(tag => {
       return (
-        <option>{tag}</option>
+        <option key={tag} value={tag}>{tag}</option>
       )
     })
+  }
+
+  const filterStories = event => {
+    if (event.target.value === "all") {
+      setCurrentArticles(news)
+    } else {
+      setCurrentArticles(news.filter(article => {
+        return article.section === event.target.value
+      }))
+    }
   }
 
   return (
     <header>
       <h1>Today's News</h1>
-      <select>
+      <select defaultValue="all" onChange={event => filterStories(event)}>
+        <option value="all">All Stories</option>
         {populateOptions()}
       </select>
     </header>
