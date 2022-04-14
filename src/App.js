@@ -1,35 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import logo from './logo.svg';
+import { Routes, Route } from 'react-router-dom'
 import './App.css';
-const API_KEY = process.env.REACT_APP_API_KEY
+import Home from './Components/Home'
+import Article from './Components/Article'
 
-function App() {
-  const [ news, setNews ] = useState([])
-
-  useEffect(() => {
-    fetch(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`)
-    .then(response => response.json())
-    .then(data => setNews(data.results))
-  }, [])
-
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:headline" element={<Article />} />
+      </Routes>
+    </main>
+  )
 }
 
 export default App;
