@@ -20,7 +20,7 @@ const Home = () => {
   const stories = () => {
     return currentArticles.map(article => {
       return (
-        <Preview article={article} key={article.title}/>
+        <Preview article={ article } key={ article.title }/>
       )
     })
   }
