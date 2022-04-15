@@ -13,7 +13,7 @@ const Article = () => {
     getFeaturedStories()
     .then(data => {
       const currentArticle = data.results.find(art => {
-        return art.title === params.headline
+        return art.title.includes(params.headline)
       })
       setArticle(currentArticle)
       setLoading(false)
