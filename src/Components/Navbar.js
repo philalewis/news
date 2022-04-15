@@ -33,9 +33,13 @@ const Navbar = ({ news, setCurrentArticles }) => {
   return (
     <header className="navbar">
       <h1 className="header">Today's News</h1>
-      <select className="section-select" defaultValue="all" onChange={event => filterStories(event)}>
+      <select
+        className="section-select"
+        defaultValue="all"
+        onChange={event => filterStories(event)
+      }>
         <option value="all">All Stories</option>
-        {populateOptions()}
+        { populateOptions() }
       </select>
     </header>
   )

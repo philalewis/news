@@ -9,10 +9,10 @@ A news app that shows the user a preview of top stories in the New York Times. U
 ## Screen Shots
 
 Home Page
-<img width="1439" alt="Screen Shot 2022-04-14 at 12 26 08 PM" src="https://user-images.githubusercontent.com/65195952/163453863-8b076b32-3c0f-4c6e-81fc-5611db071b45.png">
+![Home page](https://media.giphy.com/media/ZAe7M28LQQ2zDEKgrT/giphy.gif)
 
 Article Details
-<img width="1440" alt="Screen Shot 2022-04-14 at 12 27 20 PM" src="https://user-images.githubusercontent.com/65195952/163454017-d6db0779-bad0-461b-b8fd-c19cace1da11.png">
+![Details page](https://media.giphy.com/media/UmqKnrFDAET7nFg7yO/giphy.gif)
 
 ## Setup
 1. Clone this repository to your local machine.
@@ -21,7 +21,10 @@ Article Details
 4. Run `npm start` to view the app at `http://localhost:3000/`
 
 ## Contributors
-- [Phil Lewis](https://www.linkedin.com/in/philambroselewis/) 
+- [Phil Lewis](https://www.linkedin.com/in/philambroselewis/)
+
+## API
+- All data pulled from the [NY Times API](https://developer.nytimes.com/)
 
 ## Technologies
 - React

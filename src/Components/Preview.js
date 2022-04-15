@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../Styles/Preview.css'
 
-const Preview = ({article}) => {
+const Preview = ({ article }) => {
   return (
     <div className="story-container" key={article.url}>
       <h3 className="headline" >{article.title}</h3>
